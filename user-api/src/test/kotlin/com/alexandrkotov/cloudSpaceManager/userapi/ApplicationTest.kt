@@ -1,10 +1,10 @@
-package com.alexandrkotov.cloudSpaceManager.cloudapi
+package com.alexandrkotov.cloudSpaceManager.userapi
 
 import org.junit.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class CloudApplicationTests {
+class UserApplicationTests {
 
     @Test
     fun contextLoads() {
