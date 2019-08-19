@@ -1,6 +1,6 @@
-allprojects {
-	group = "com.example"
-	version = "0.0.1-SNAPSHOT"
+subprojects {
+	group = "com.alexandrkotov.cloudspacemanager"
+	version = "0.0.1"
 
 	repositories {
 		jcenter()
