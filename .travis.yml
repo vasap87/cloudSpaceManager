@@ -7,5 +7,5 @@ jdk: oraclejdk8
 
 script:
   - gradle wrapper
-  - ./gradlew test
+  - ./gradlew tasks
   - ./gradlew build
