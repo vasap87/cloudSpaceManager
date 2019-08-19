@@ -1,11 +1,11 @@
-package com.alexandrkotov.cloudSpaceManager.cloudapi
+package com.alexandrkotov.cloudSpaceManager.userapi
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-open class Application
+class UserApplication
 
 fun main(args: Array<String>) {
-    runApplication<Application>(*args)
+    runApplication<UserApplication>(*args)
 }
