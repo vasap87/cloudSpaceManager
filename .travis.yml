@@ -7,4 +7,6 @@ jdk: oraclejdk8
 
 script:
   - gradle wrapper
+  - gradle dependencies
+  - ./gradlew user-api:build cloud-api:build
   - ./gradlew build --scan -s
