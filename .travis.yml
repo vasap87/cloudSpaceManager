@@ -6,6 +6,4 @@ dist: trusty
 jdk: oraclejdk8
 
 script:
-  - ./gradlew tasks
-  - ./gradlew projects
   - ./gradlew build

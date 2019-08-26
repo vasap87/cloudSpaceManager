@@ -13,11 +13,17 @@ import org.springframework.security.crypto.password.PasswordEncoder
 @EnableWebSecurity
 class SecurityConfig : WebSecurityConfigurerAdapter() {
 
+    @Autowired
+    lateinit var passwordEncoder: PasswordEncoder
+
     override fun configure(http: HttpSecurity?) {
         http!!.authorizeRequests()
-            .antMatchers("/css/**", "/", "/registration").permitAll()
-            .antMatchers("/api/**").hasRole("USER")
-            .anyRequest().authenticated()
+            .antMatchers("/api/**")
+            .authenticated()
+            .antMatchers("/registration")
+            .permitAll()
+            .and()
+            .httpBasic();
         http.formLogin()
             .loginPage("/login")
             .failureUrl("/login-error")
@@ -28,12 +34,9 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
     fun configureGlobal(auth: AuthenticationManagerBuilder) {
         auth
             .inMemoryAuthentication()
-            .withUser(
-                User.withDefaultPasswordEncoder()
-                    .username("user")
-                    .password("password")
-                    .roles("USER")
-            )
+            .withUser("user")
+            .password(passwordEncoder.encode("password"))
+            .roles("USER")
     }
 
     @Bean
